@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "scala",
+            "request": "launch",
+            "name": "Launch Main",
+            "mainClass": "github.hendrikboeck.aoc24.day01.Main",
+            "args": [],
+            "jvmOptions": []
+        },
+        // {
+        //     "type": "scala",
+        //     "request": "launch",
+        //     "name": "Launch Test",
+        //     "testClass": "e00.Test",
+        //     "args": [],
+        //     "jvmOptions": []
+        // },
+        {
+            "type": "scala",
+            "request": "attach",
+            "name": "Attach debugger",
+            "buildTarget": "root",
+            "hostName": "localhost",
+            "port": 5005
+        }
+    ]
+}
