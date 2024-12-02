@@ -1,4 +1,4 @@
-package github.hendrikboeck.aoc24.day01
+package github.hendrikboeck.aoc24.day02
 
 import scala.io.{ Codec, Source }
 
@@ -12,6 +12,8 @@ object Part1 {
 
         val src     = Source.fromFile(inputPath)
         val reports = src.getLines().map(_.trim).filter(!_.isEmpty).map(getReport).toList
+
+        println(reports)
 
         src.close()
     }

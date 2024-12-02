@@ -1,4 +1,4 @@
-name         := "Advent of Code 2024 - Day 1"
+name         := "Advent of Code 2024 - Day 2"
 version      := "0.1.0"
 organization := "github.hendrikboeck"
 
