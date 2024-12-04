@@ -1,0 +1,12 @@
+{
+    "files.watcherExclude": {
+        "**/target": true,
+        "**/node_modules": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.bloop": true,
+        "**/.ignore": true,
+        "**/.metals": true,
+        "**/project": true,
+    }
+}

@@ -1,4 +1,4 @@
-package github.hendrikboeck.aoc24.day01
+package day01
 
 import scala.io.{ Codec, Source }
 
@@ -8,7 +8,7 @@ object Part2 {
 
         implicit val codec = Codec.UTF8
 
-        val src = Source.fromFile(inputPath)
+        val src = Source.fromResource(inputPath)
         val (ll, rl) = src
             .getLines()
             .map(_.trim)

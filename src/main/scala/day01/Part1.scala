@@ -1,4 +1,4 @@
-package github.hendrikboeck.aoc24.day01
+package day01
 
 import scala.io.{ Codec, Source }
 
@@ -22,7 +22,7 @@ object Part1 {
 
         implicit val codec = Codec.UTF8
 
-        val src    = Source.fromFile(inputPath)
+        val src    = Source.fromResource(inputPath)
         val nums   = src.getLines().map(_.trim).filter(!_.isEmpty).map(parseNums).toList.unzip
         val result = (nums._1 :: nums._2 :: Nil).map(_.sorted).transpose.map(getDistance).sum
 

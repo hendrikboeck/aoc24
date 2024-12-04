@@ -1,10 +1,14 @@
-name         := "Advent of Code 2024 - Day 3"
+name         := "Advent of Code 2024"
 version      := "0.1.0"
 organization := "github.hendrikboeck"
 
 scalaVersion := "2.13.12"
 
-libraryDependencies ++= Seq("org.scala-lang" % "scala-library" % scalaVersion.value)
+libraryDependencies ++=
+    Seq(
+      "org.scala-lang" % "scala-library" % scalaVersion.value,
+      "org.scalatest" %% "scalatest"     % "3.2.10" % Test,
+    )
 
 resolvers ++= Seq("Maven Central" at "https://repo1.maven.org/maven2/")
 
