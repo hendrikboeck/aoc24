@@ -25,7 +25,7 @@ object Part2 {
                     case (true, i) => report.patch(i, Nil, 1)
                 }
 
-            println(combined)
+            // println(combined)
         }
 
         sorted && dst.isEmpty
