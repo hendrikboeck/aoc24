@@ -31,17 +31,19 @@ object Part2 {
         sorted && dst.isEmpty
     }
 
-    def apply(inputPath: String): Unit = {
+    def solve(inputPath: String): Int = {
 
         implicit val codec = Codec.UTF8
 
-        val src         = Source.fromFile(inputPath)
-        val reports     = src.getLines().map(_.trim).filter(!_.isEmpty).map(getReport).toList
+        val src = Source.fromResource(inputPath)
+        val lines =
+            try src.getLines().toList
+            finally src.close()
+
+        val reports     = lines.map(_.trim).filter(!_.isEmpty).map(getReport).toList
         val safeReports = reports.filter(isSafe(_)).length
 
-        println(safeReports)
-
-        src.close()
+        safeReports
     }
 
 }

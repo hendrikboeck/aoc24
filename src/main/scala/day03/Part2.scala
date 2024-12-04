@@ -4,11 +4,11 @@ import scala.io.{ Codec, Source }
 
 object Part2 {
 
-    def apply(inputPath: String): Unit = {
+    def solve(inputPath: String): Int = {
 
         implicit val codec = Codec.UTF8
 
-        val src = Source.fromFile(inputPath)
+        val src = Source.fromResource(inputPath)
         val text =
             try src.mkString.trim
             finally src.close()
@@ -31,7 +31,7 @@ object Part2 {
             }
             .sum
 
-        println(result)
+        result
     }
 
 }

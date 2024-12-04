@@ -7,6 +7,6 @@
         "**/.bloop": true,
         "**/.ignore": true,
         "**/.metals": true,
-        "**/project": true,
+        "**/project": true
     }
 }

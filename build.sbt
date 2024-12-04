@@ -6,8 +6,10 @@ scalaVersion := "2.13.12"
 
 libraryDependencies ++=
     Seq(
-      "org.scala-lang" % "scala-library" % scalaVersion.value,
-      "org.scalatest" %% "scalatest"     % "3.2.10" % Test,
+      "org.scala-lang"    % "scala-library" % scalaVersion.value,
+      "org.scala-lang"    % "scala-reflect" % scalaVersion.value,
+      "org.scalatest"    %% "scalatest"     % "3.2.10" % Test,
+      "com.github.scopt" %% "scopt"         % "4.0.1",
     )
 
 resolvers ++= Seq("Maven Central" at "https://repo1.maven.org/maven2/")

@@ -18,17 +18,19 @@ object Part1 {
         case _               => throw new RuntimeException("expected 2 nums, but got unexpected")
     }
 
-    def apply(inputPath: String): Unit = {
+    def solve(inputPath: String): Int = {
 
         implicit val codec = Codec.UTF8
 
-        val src    = Source.fromResource(inputPath)
-        val nums   = src.getLines().map(_.trim).filter(!_.isEmpty).map(parseNums).toList.unzip
+        val src = Source.fromResource(inputPath)
+        val lines =
+            try src.getLines().toList
+            finally src.close()
+
+        val nums   = lines.map(_.trim).filter(!_.isEmpty).map(parseNums).toList.unzip
         val result = (nums._1 :: nums._2 :: Nil).map(_.sorted).transpose.map(getDistance).sum
 
-        println(result)
-
-        src.close()
+        result
     }
 
 }
