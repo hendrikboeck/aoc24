@@ -82,4 +82,18 @@ Of course, you'll need to be careful: the actual list of _page ordering rules_ i
 
 Determine which updates are already in the correct order. _What do you get if you add up the middle page number from those correctly-ordered updates?_
 
+<h2>--- Part Two ---</h2>
+
+While the Elves get to work printing the correctly-ordered updates, you have a little time to fix the rest of them.
+
+For each of the _incorrectly-ordered updates_, use the page ordering rules to put the page numbers in the right order. For the above example, here are the three incorrectly-ordered updates and their correct orderings:
+
+- `75,97,47,61,53` becomes <code>97,75,<em>47</em>,61,53</code>.
+- `61,13,29` becomes <code>61,<em>29</em>,13</code>.
+- `97,13,75,29,47` becomes <code>97,75,<em>47</em>,29,13</code>.
+
+After taking _only the incorrectly-ordered updates_ and ordering them correctly, their middle page numbers are `47`, `29`, and `47`. Adding these together produces _`123`_.
+
+Find the updates which are not in the correct order. _What do you get if you add up the middle page numbers after correctly ordering just those updates?_
+
 </div>
