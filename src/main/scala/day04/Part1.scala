@@ -27,6 +27,7 @@ object Part1 {
                 direction match {
                     case "45"  => getDiagonal45(k)
                     case "-45" => getDiagonalMinus45(k)
+                    case _     => throw new RuntimeException("Invalid direction")
                 }
         }
 
