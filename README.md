@@ -4,15 +4,15 @@
 
 ### Puzzles
 
-| Day | Name                                   | Part 1               | Part 2               |
-| --- | -------------------------------------- | -------------------- | -------------------- |
-| 1   | [Historian Hysteria](./tasks/day01.md) | ![PASS][pass-shield] | ![PASS][pass-shield] |
-| 2   | [Red-Nosed Reports](./tasks/day02.md)  | ![PASS][pass-shield] | ![FAIL][fail-shield] |
-| 3   | [Mull It Over](./tasks/day03.md)       | ![PASS][pass-shield] | ![PASS][pass-shield] |
-| 4   | [Ceres Search](./tasks/day04.md)       | ![PASS][pass-shield] | ![PASS][pass-shield] |
-| 5   | [Print Queue](./tasks/day05.md)        | ![PASS][pass-shield] | ![PASS][pass-shield] |
-| 6   | [Guard Gallivant](./tasks/day06.md)    | ![PASS][pass-shield] | ![FAIL][fail-shield] |
-| 7   | [Bridge Repair](./tasks/day07.md)      | ![FAIL][fail-shield] | ![FAIL][fail-shield] |
+| Day | Name                                   | Part 1        | Part 2        |
+| --- | -------------------------------------- | ------------- | ------------- |
+| 1   | [Historian Hysteria](./tasks/day01.md) | ![PASS][pass] | ![PASS][pass] |
+| 2   | [Red-Nosed Reports](./tasks/day02.md)  | ![PASS][pass] | ![FAIL][fail] |
+| 3   | [Mull It Over](./tasks/day03.md)       | ![PASS][pass] | ![PASS][pass] |
+| 4   | [Ceres Search](./tasks/day04.md)       | ![PASS][pass] | ![PASS][pass] |
+| 5   | [Print Queue](./tasks/day05.md)        | ![PASS][pass] | ![PASS][pass] |
+| 6   | [Guard Gallivant](./tasks/day06.md)    | ![PASS][pass] | ![FAIL][fail] |
+| 7   | [Bridge Repair](./tasks/day07.md)      | ![FAIL][fail] | ![FAIL][fail] |
 
-[pass-shield]: https://img.shields.io/badge/PASS-brightgreen?style=flat-square
-[fail-shield]: https://img.shields.io/badge/FAIL-darkred?style=flat-square
+[pass]: https://img.shields.io/badge/PASS-brightgreen?style=flat-square
+[fail]: https://img.shields.io/badge/FAIL-darkred?style=flat-square
