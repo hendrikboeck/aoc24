@@ -1,5 +1,4 @@
-![License-Badge](https://img.shields.io/github/license/hendrikboeck/aoc24?style=for-the-badge&label=License&color=blue
-)
+![License-Badge](https://img.shields.io/github/license/hendrikboeck/aoc24?style=for-the-badge&label=License&color=blue)
 
 ## Advent of Code - 2024
 
@@ -12,7 +11,7 @@
 | 3   | [Mull It Over](./tasks/day03.md)       | ![PASS][pass-shield] | ![PASS][pass-shield] |
 | 4   | [Ceres Search](./tasks/day04.md)       | ![PASS][pass-shield] | ![PASS][pass-shield] |
 | 5   | [Print Queue](./tasks/day05.md)        | ![PASS][pass-shield] | ![PASS][pass-shield] |
-| 6   | [Guard Gallivant](./tasks/day06.md)    | ![FAIL][fail-shield] | ![FAIL][fail-shield] |
+| 6   | [Guard Gallivant](./tasks/day06.md)    | ![PASS][pass-shield] | ![FAIL][fail-shield] |
 | 7   | [Bridge Repair](./tasks/day07.md)      | ![FAIL][fail-shield] | ![FAIL][fail-shield] |
 
 [pass-shield]: https://img.shields.io/badge/PASS-brightgreen?style=flat-square
