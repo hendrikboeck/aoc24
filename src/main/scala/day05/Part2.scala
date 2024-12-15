@@ -4,12 +4,12 @@ import scala.io.{ Codec, Source }
 
 object Part2 {
 
-    def order(pageList: List[Int], beforeMap: Map[Int, List[Int]]): List[Int] = pageList
+    private def order(pageList: List[Int], beforeMap: Map[Int, List[Int]]): List[Int] = pageList
         .sortWith((a, b) => !beforeMap.getOrElse(a, Nil).contains(b))
 
     def solve(inputPath: String): Int = {
 
-        implicit val codec = Codec.UTF8
+        implicit val codec: Codec = Codec.UTF8
 
         val src = Source.fromResource(inputPath)
         val lines =

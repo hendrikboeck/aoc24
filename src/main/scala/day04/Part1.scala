@@ -4,7 +4,7 @@ import scala.io.{ Codec, Source }
 
 object Part1 {
 
-    def transposeToDiagonals(lines: List[String], direction: String): List[String] = {
+    private def transposeToDiagonals(lines: List[String], direction: String): List[String] = {
         val maxLength = lines.map(_.length).max
 
         def getDiagonal45(k: Int): String = lines
@@ -34,7 +34,7 @@ object Part1 {
         diagonals.filter(_.nonEmpty).toList
     }
 
-    def countXmas(lines: List[String]): Int = {
+    private def countXmas(lines: List[String]): Int = {
         val xmasPattern = """XMAS""".r
         val samxPattern = """SAMX""".r
 
@@ -45,7 +45,7 @@ object Part1 {
 
     def solve(inputPath: String): Int = {
 
-        implicit val codec = Codec.UTF8
+        implicit val codec: Codec = Codec.UTF8
 
         val src = Source.fromResource(inputPath)
         val lines =

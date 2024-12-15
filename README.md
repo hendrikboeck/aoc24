@@ -5,7 +5,7 @@
 ### Puzzles
 
 | Day | Name                                   | Part 1        | Part 2        |
-| --- | -------------------------------------- | ------------- | ------------- |
+|-----|----------------------------------------|---------------|---------------|
 | 1   | [Historian Hysteria](./tasks/day01.md) | ![pass][pass] | ![pass][pass] |
 | 2   | [Red-Nosed Reports](./tasks/day02.md)  | ![pass][pass] | ![fail][fail] |
 | 3   | [Mull It Over](./tasks/day03.md)       | ![pass][pass] | ![pass][pass] |

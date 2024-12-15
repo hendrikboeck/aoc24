@@ -33,7 +33,7 @@ object Part1 {
 
     def solve(inputPath: String): Int = {
 
-        implicit val codec = Codec.UTF8
+        implicit val codec: Codec = Codec.UTF8
 
         val src = Source.fromResource(inputPath)
         val lines =

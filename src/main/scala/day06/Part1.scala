@@ -1,6 +1,7 @@
 package day06
 
-import scala.io.{ Codec, Source }
+import scala.annotation.unused
+import scala.io.{Codec, Source}
 
 sealed trait Tile
 case object Empty       extends Tile
@@ -49,10 +50,10 @@ class LabMap(tiles: Array[Array[Tile]], guard: Guard) {
 
     def apply(x: Int, y: Int): Tile = tiles(y)(x)
 
-    def isInBounds(x: Int, y: Int): Boolean = x >= 0 && x < tiles(0).length && y >= 0 &&
+    private def isInBounds(x: Int, y: Int): Boolean = x >= 0 && x < tiles(0).length && y >= 0 &&
         y < tiles.length
 
-    def getFront(): Option[Tile] = {
+    private def getFront: Option[Tile] = {
         val (x, y) = guard.dir match {
             case North => (guard.x, guard.y - 1)
             case East  => (guard.x + 1, guard.y)
@@ -64,15 +65,15 @@ class LabMap(tiles: Array[Array[Tile]], guard: Guard) {
         else Some(tiles(y)(x))
     }
 
-    def markVisited(): Unit = tiles(guard.y)(guard.x) = Marked
+    private def markVisited(): Unit = tiles(guard.y)(guard.x) = Marked
 
-    def run(): LabMap = {
+    def run: LabMap = {
         var inBounds = true
 
         while (inBounds) {
             markVisited()
 
-            getFront() match {
+            getFront match {
                 case Some(Empty) | Some(Marked) => guard.moveForward()
                 case Some(Obstruction)          => guard.turnRight()
                 case None                       => inBounds = false
@@ -82,8 +83,9 @@ class LabMap(tiles: Array[Array[Tile]], guard: Guard) {
         this
     }
 
-    def getDistinctTiles(): Int = tiles.flatten.count(_ == Marked)
+    def getDistinctTiles: Int = tiles.flatten.count(_ == Marked)
 
+    @unused
     def debugPrint(): Unit = {
         for (y <- tiles.indices) {
             for (x <- tiles(y).indices) {
@@ -104,7 +106,7 @@ class LabMap(tiles: Array[Array[Tile]], guard: Guard) {
 object LabMap {
 
     def fromString(str: String): LabMap = {
-        val chars = str.split("\n").map(_.trim).filter(_.nonEmpty).map(_.toCharArray).toArray
+        val chars = str.split("\n").map(_.trim).filter(_.nonEmpty).map(_.toCharArray)
         require(chars.map(_.length).distinct.length == 1, "all lines must be the same length")
 
         var guard: Guard = null
@@ -131,15 +133,15 @@ object Part1 {
 
     def solve(inputPath: String): Int = {
 
-        implicit val codec = Codec.UTF8
+        implicit val codec: Codec = Codec.UTF8
 
         val src = Source.fromResource(inputPath)
         val str =
             try src.mkString.trim
-            finally src.close()
+            finally src.close
 
         val map = LabMap.fromString(str)
-        map.run().getDistinctTiles()
+        map.run.getDistinctTiles
 
     }
 

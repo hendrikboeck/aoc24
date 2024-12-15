@@ -4,7 +4,7 @@ import scala.io.{ Codec, Source }
 
 object Part2 {
 
-    def getReport(line: String): List[Int] = line.split(' ').filter(!_.isEmpty).map(_.toInt).toList
+    def getReport(line: String): List[Int] = line.split(' ').filter(_.nonEmpty).map(_.toInt).toList
 
     def isSafe(report: List[Int], allowFailure: Boolean = true): Boolean = {
         val sorted = report.sorted == report || report.sorted == report.reverse
@@ -16,7 +16,7 @@ object Part2 {
             .map(i => i > 3 || i == 0)
             .toList
 
-        var safe = sorted && dst.filter(x => x).isEmpty
+        var safe = sorted && !dst.exists(x => x)
 
         if (!safe && allowFailure && dst.length > 1) {
             val combined = dst

@@ -56,7 +56,7 @@ object Main {
         println(result)
     }
 
-    def loadModule(day: Int, part: Int): (Any, universe.ModuleSymbol) = {
+    private def loadModule(day: Int, part: Int): (Any, universe.ModuleSymbol) = {
         val mirror    = universe.runtimeMirror(getClass.getClassLoader)
         val dayPadded = f"$day%02d"
         val className = s"day$dayPadded.Part$part"
@@ -69,7 +69,7 @@ object Main {
         (moduleMirror.instance, symbol)
     }
 
-    def invokeSolveMethod(
+    private def invokeSolveMethod(
         instance: Any,
         symbol: universe.ModuleSymbol,
         day: Int,
