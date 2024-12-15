@@ -7,7 +7,7 @@
 | Day | Name                                   | Part 1        | Part 2        |
 |-----|----------------------------------------|---------------|---------------|
 | 1   | [Historian Hysteria](./tasks/day01.md) | ![pass][pass] | ![pass][pass] |
-| 2   | [Red-Nosed Reports](./tasks/day02.md)  | ![pass][pass] | ![fail][fail] |
+| 2   | [Red-Nosed Reports](./tasks/day02.md)  | ![pass][pass] | ![pass][pass] |
 | 3   | [Mull It Over](./tasks/day03.md)       | ![pass][pass] | ![pass][pass] |
 | 4   | [Ceres Search](./tasks/day04.md)       | ![pass][pass] | ![pass][pass] |
 | 5   | [Print Queue](./tasks/day05.md)        | ![pass][pass] | ![pass][pass] |
