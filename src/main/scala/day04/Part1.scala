@@ -5,20 +5,27 @@ import scala.io.{ Codec, Source }
 object Part1 {
 
     private def transposeToDiagonals(lines: List[String], direction: String): List[String] = {
-        val maxLength = lines.map(_.length).max
+        val maxLength = lines.map(_.length).maxOption.getOrElse(0)
 
         def getDiagonal45(k: Int): String = lines
             .indices
             .collect {
-                case i if i + k >= 0 && i + k < lines(i).length => lines(i)(i + k)
+                case i if i + k >= 0 && i + k < lines.lift(i).map(_.length).getOrElse(0) =>
+                    lines
+                        .lift(i)
+                        .flatMap(_.lift(i + k))
+                        .getOrElse(throw new RuntimeException("Invalid index"))
             }
             .mkString
 
         def getDiagonalMinus45(k: Int): String = lines
             .indices
             .collect {
-                case i if i - k >= 0 && i - k < lines(i).length =>
-                    lines(lines.length - 1 - i)(i - k)
+                case i if i - k >= 0 && i - k < lines.lift(i).map(_.length).getOrElse(0) =>
+                    lines
+                        .lift(lines.length - 1 - i)
+                        .flatMap(_.lift(i - k))
+                        .getOrElse(throw new RuntimeException("Invalid index"))
             }
             .mkString
 

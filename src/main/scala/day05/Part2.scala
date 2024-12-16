@@ -29,7 +29,7 @@ object Part2 {
         pages
             .filter(!Part1.isOrderedCorrectly(_, orderedMap))
             .map(order(_, beforeMap))
-            .map(part => part((part.length / 2).toInt))
+            .map(part => part.lift((part.length / 2).toInt).getOrElse(0))
             .sum
     }
 

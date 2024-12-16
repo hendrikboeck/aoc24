@@ -14,7 +14,7 @@ libraryDependencies ++=
 
 resolvers ++= Seq("Maven Central" at "https://repo1.maven.org/maven2/")
 
-// testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-oD")
+Test / testOptions += Tests.Argument(TestFrameworks.ScalaTest, "-oD")
 
 scalacOptions ++=
     Seq(
@@ -26,3 +26,5 @@ scalacOptions ++=
       "-Ywarn-dead-code", // Warn when dead code is identified
       "-Ywarn-unused:imports", // Warn if imports are unused
     )
+
+scapegoatDisabledInspections := Seq("StoreBeforeReturn")

@@ -65,7 +65,7 @@ hs_err_pid*
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .ionide
-project
+# project
 .ignore
 
 # End of https://www.toptal.com/developers/gitignore/api/scala,sbt,metals,visualstudiocode,maven

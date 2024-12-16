@@ -42,7 +42,7 @@ object Part1 {
                 case head :: tail => isValidCalibration(head, tail)
                 case _            => throw new RuntimeException("Invalid calibration")
             }
-            .map(_.head)
+            .map(_.headOption.getOrElse(throw new RuntimeException("Invalid calibration")))
             .sum
 
         result

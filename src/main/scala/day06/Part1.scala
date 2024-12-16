@@ -1,7 +1,7 @@
 package day06
 
 import scala.annotation.unused
-import scala.io.{Codec, Source}
+import scala.io.{ Codec, Source }
 
 sealed trait Tile
 case object Empty       extends Tile
@@ -109,7 +109,7 @@ object LabMap {
         val chars = str.split("\n").map(_.trim).filter(_.nonEmpty).map(_.toCharArray)
         require(chars.map(_.length).distinct.length == 1, "all lines must be the same length")
 
-        var guard: Guard = null
+        var guard: Option[Guard] = None
         val map = Array.tabulate[Tile](chars.length, chars(0).length) {
             (y, x) =>
                 chars(y)(x) match {
@@ -117,14 +117,16 @@ object LabMap {
                     case '#' => Obstruction
                     case 'X' => Marked
                     case c @ ('^' | '>' | 'v' | '<') =>
-                        guard = Guard(x, y, c)
+                        guard = Some(Guard(x, y, c))
                         Empty
                     case c => throw new RuntimeException(s"Invalid character: $c")
                 }
         }
 
-        require(guard != null, "guard must be placed on the map")
-        new LabMap(map, guard)
+        new LabMap(
+          map,
+          guard.getOrElse(throw new RuntimeException("guard must be placed on the map")),
+        )
     }
 
 }

@@ -3,7 +3,7 @@ import scopt.OParser
 import scala.reflect.runtime.universe
 import scala.util.Try
 
-case class Config(day: Int = 0, input: String = "", part: Int = 1)
+final case class Config(day: Int = 0, input: String = "", part: Int = 1)
 
 object ConfigParser {
 

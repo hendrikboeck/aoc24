@@ -50,7 +50,7 @@ object Part1 {
 
         pages
             .filter(isOrderedCorrectly(_, orderedMap))
-            .map(part => part((part.length / 2).toInt))
+            .map(part => part.lift((part.length / 2).toInt).getOrElse(0))
             .sum
     }
 
